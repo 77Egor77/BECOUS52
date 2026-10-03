@@ -27,6 +27,18 @@ body::before
     font-style: normal;
     font-display: swap;
 }
+.wrapper {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.star,
+.heart1,
+.heart2,
+.heart3 {
+    pointer-events: none;
+    outline: none;
+}
 .star
 {
     position: absolute;
@@ -400,13 +412,12 @@ body > .letter.expand .text .p3
     margin-top: 24px;
 }
 button,
-a,
-*:focus {
+a {
     outline: none;
 }
+
 button:focus-visible,
-a:focus-visible,
-*:focus-visible {
+a:focus-visible {
     outline: 2px solid #e75480;
     outline-offset: 3px;
 }
