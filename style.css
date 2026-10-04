@@ -585,4 +585,30 @@ a:focus-visible {
     animation: fadeIn 0.6s ease 0.3s both;
     filter: drop-shadow(0 4px 10px rgba(231, 84, 128, 0.2));
 }
+.wrapper .hint {
+    position: absolute;
+    top: 100%;                /* сразу под .envelope */
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 20px;         /* отступ от конверта */
+    color: #f2477a;
+    font-family: 'Pacifico', cursive;
+    font-size: 5vw;
+    text-align: center;
+    white-space: nowrap;
+    pointer-events: none;     /* не ловит клики */
+    animation: hintPulse 2s ease-in-out infinite;
+}
+
+/* Плавное «дыхание» подсказки */
+@keyframes hintPulse {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0.5; }
+}
+
+/* Скрываем, когда конверт открыт */
+.wrapper.open .hint {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
 
